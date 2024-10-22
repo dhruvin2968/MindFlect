@@ -1,12 +1,12 @@
-//import { useNavigate } from 'react-router-dom';
 import { Link, NavLink } from "react-router-dom";
 import { auth, provider } from "../firebase/config";
 import { signInWithPopup, signOut } from "firebase/auth";
 import Logo from "../assets/logo.png";
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 export const Header = () => {
-  // const navigate = useNavigate();
+
    const [isAuth, setIsAuth] = useState(JSON.parse(localStorage.getItem("isAuth")) || false);
   
   function handleLogin(){
@@ -14,10 +14,19 @@ export const Header = () => {
       setIsAuth(true);
       localStorage.setItem("isAuth", true);
       console.log(result);
-     
+      Swal.fire({
+        title: 'Logged In Successully',
+        icon: 'success',
+        confirmButtonText: 'Cool!'
+      })
     })
     .catch(function (error) {
       console.error(error);
+      Swal.fire({
+        title: `${error}`,
+        icon: 'error',
+        confirmButtonText: 'Okay'
+      })
     })
   }
 
@@ -25,6 +34,11 @@ export const Header = () => {
     signOut(auth);
     setIsAuth(false);
     localStorage.setItem("isAuth", false);
+    Swal.fire({
+      title: 'Logged Out Successully!',
+      icon: 'success',
+      confirmButtonText: 'Okay'
+    })
   }
 
   return (

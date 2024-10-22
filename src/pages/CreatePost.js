@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useTitle } from "../hooks/useTitle";
 import { addDoc, collection } from "firebase/firestore";
 import { db, auth } from "../firebase/config";
-
+import Swal from 'sweetalert2';
 export const CreatePost = () => {
  const navigate = useNavigate();
   useTitle("Create Post - MindFlect");
@@ -20,7 +20,13 @@ export const CreatePost = () => {
       }
     }
     await addDoc(postRef, document);
+    Swal.fire({
+      title: "Post Successful!",
+      icon: "success",
+      confirmButtonText: 'Cool'
+    });
     navigate("/");
+
   }
 
   return (

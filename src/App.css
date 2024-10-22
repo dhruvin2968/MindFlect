@@ -1,8 +1,11 @@
 .App{
   max-width: 1200px;
   margin: auto;
+  
 }
-
+body{
+  background-color: #ecfdfd;
+}
 /* Header Component */
 header{
   height: 70px;
@@ -39,7 +42,7 @@ header{
 }
 
 .nav .link.active{
-  background-color: #F2EBE9;
+  background-color: #bef4ff;
   border-radius: 5px;
 }
 
@@ -112,6 +115,7 @@ header{
   text-align: center;
   font-size: 22px;
   margin-top: 20px;
+  
 }
 
 .createPost{
@@ -128,7 +132,7 @@ header{
   border-radius: 5px;
   border: 0px;
   box-shadow: #cbc9c9 0px 1px 4px;
-
+  background-color: #d5f8ff;
 }
 
 .createPost .description{
@@ -137,7 +141,8 @@ header{
   padding: 10px;
   border-radius: 5px;
   border: 0px;
-  box-shadow: #cbc9c9 0px 1px 4px;
+  background-color: #d5f8ff;
+  box-shadow: #cdcccc 0px 1px 4px;
   height: 300px;
 }
 
@@ -148,8 +153,9 @@ header{
   background-color: #5FD068;
   border: 0px;
   border-radius: 5px;
-  color: #ffffff;
+  color: #000000;
   cursor: pointer;
+  font-weight: 500;
 }
 
 
