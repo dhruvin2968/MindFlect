@@ -23,7 +23,7 @@ export const Header = () => {
     .catch(function (error) {
       console.error(error);
       Swal.fire({
-        title: `${error}`,
+        title: `Login Failed`,
         icon: 'error',
         confirmButtonText: 'Okay'
       })
