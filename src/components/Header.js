@@ -40,12 +40,21 @@ export const Header = () => {
       confirmButtonText: 'Okay'
     })
   }
+  const url = 'https://api.freeapi.app/api/v1/public/quotes/quote/random';
+  const options = {method: 'GET', headers: {accept: 'application/json'}};
+ const [quote, setQuote] = useState(" Quotes");
+  async function getQuote(){
+  try {
+    const response = await fetch(url, options);
+    const data = await response.json();
+    console.log(data.data.content);
+    setQuote(data.data.content);
+  } catch (error) {
+    console.error(error);
+  }
+}
 
   return (
-
-
-
-
 
 <nav >
   <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
@@ -62,15 +71,32 @@ export const Header = () => {
         { isAuth ? (
           <>
             <NavLink to="/create" className="link">Create</NavLink>
-            <button onClick={handleLogout} className="auth"><i className="bi bi-box-arrow-right"></i> Logout</button> 
+            <button onClick={handleLogout} className="auth"><i className="bi bi-box-arrow-right"></i> Logout </button> 
           </>                   
          ) : (
           <button onClick={handleLogin}  className="auth"><i className="bi bi-google"></i> Login</button>
          ) }         
          
       </nav>
+
+
     </div>
   </div>
+  <nav >
+  <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+  <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+     
+  <div className="flex flex-col items-start w-full px-4"> {/* Ensure full width and padding */}
+  <span className="self-center text-2xl font-semibold whitespace-normal break-words dark:text-blue-950">
+    <button onClick={getQuote} className="auth">
+      <i className="bi bi-arrow-right-circle"></i> {quote}
+    </button>
+  </span>
+</div>
+
+    </Link>
+    </div>
+</nav>
 </nav>
   
   )
