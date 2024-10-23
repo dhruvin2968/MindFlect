@@ -45,7 +45,11 @@ export const Header = () => {
     <header>
       <Link to="/" className="logo">
         <img src={Logo} alt="MindFlect Logo" />
-        <span>MindFlect</span>
+        <logoname>
+        <span>MindFlect
+        </span>
+        <span2>Reflect. Share. Grow.</span2>
+        </logoname>
       </Link>
       <nav className="nav">
         <NavLink to="/" className="link" end>Home</NavLink>

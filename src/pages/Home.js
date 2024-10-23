@@ -4,7 +4,7 @@ import {PostCard,SkeletonCard} from "../components"
 import {getDocs,collection} from "firebase/firestore";
 import{db} from "../firebase/config"
 export const Home = () => {
-  useTitle("MindFlect-Where mind reflects");
+  useTitle("MindFlect - Reflect, Share, Grow");
   const [posts,setPosts]=useState(new Array(2).fill(false)); //returns array with 2 elements both are false
   const [toggle,setToggle]=useState();
   const postRef=useRef(collection(db,"posts"));
