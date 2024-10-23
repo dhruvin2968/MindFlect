@@ -56,14 +56,14 @@ export const CreatePost = () => {
           className="title"
           name="title"
           placeholder="Title"
-          maxLength="50"
+          maxLength="100"
           required
         />
         <textarea
           className="description"
           name="description"
           placeholder="Description"
-          maxLength="1200"
+          maxLength="3000"
           required
         ></textarea>
         <button type="submit" className="submit" disabled={isDisabled}>
