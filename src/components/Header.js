@@ -42,16 +42,22 @@ export const Header = () => {
   }
 
   return (
-    <header>
-      <Link to="/" className="logo">
-        <img src={Logo} alt="MindFlect Logo" />
-        <logoname>
-        <span>MindFlect
-        </span>
-        <span2>Reflect. Share. Grow.</span2>
-        </logoname>
-      </Link>
-      <nav className="nav">
+
+
+
+
+
+<nav >
+  <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+  <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+      <img src={Logo} className="h-12" alt="Flowbite Logo" />
+      <div className="flex flex-col items-start"> {/* Align text to the left */}
+        <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-blue-950">MindFlect</span>
+        <span className="logo-motto text-sm dark:text-gray-400">Reflect. Share. Grow.</span>
+      </div>
+    </Link>
+    <div className="flex items-center space-x-6">
+    <nav className="nav">
         <NavLink to="/" className="link" end>Home</NavLink>
         { isAuth ? (
           <>
@@ -63,6 +69,9 @@ export const Header = () => {
          ) }         
          
       </nav>
-    </header>
+    </div>
+  </div>
+</nav>
+  
   )
 }
