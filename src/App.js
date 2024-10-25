@@ -13,14 +13,14 @@ const App = () => {
   }, []);
 
   return (
-    <>
+    <div className="App">
       {loading && <Preloaders />}
       <main className={`${loading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-200`}>
         <Header />
         <AllRoutes />
         <Footer />
       </main>
-    </>
+    </div>
   );
 };
 

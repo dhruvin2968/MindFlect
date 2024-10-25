@@ -1,5 +1,5 @@
 .App{
-  max-width: 1200px;
+  max-width:1200px;
   margin: auto;
   
 }
@@ -37,12 +37,27 @@ header {
 /* Add responsiveness */
 
 @media (max-width: 480px) {
-  
+  nav {
+    display: flex;
+    justify-content: space-between; /* Align items to the edges */
+    padding-top: 20px;
+    align-items: center;
+    
+  }
+
+  .link {
+    margin-right: 20px; /* Space between the left links */
+  }
+
+  .auth {
+    margin-left: auto; /* Push the login/logout button to the right */
+  }
 
   .logo-name {
     font-size: 1.5rem; /* Reduce font size for very small screens */
   }
 }
+
 .comment
 {
   font-weight: 500;
