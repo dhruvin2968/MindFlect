@@ -24,12 +24,35 @@ export const PostCard = ({post, toggle, setToggle}) => {
               
               
               { dropdown &&  <Comments  post={post} setDropdown={setDropdown} />}
-              <button  onClick={() => setLiked(!liked)}  className=" ico"> {!liked?<i className="bi bi-heart "></i>:<i class="bi bi-heart-fill text-red-600"></i>}</button>
+              <button
+  onClick={() => setLiked(!liked)}
+  className="ico transform transition duration-200 ease-in-out"
+  style={{ transform: liked ? 'scale(1.2)' : 'scale(1)' }}
+>
+  {!liked ? (
+    <i className="bi bi-heart "></i>
+  ) : (
+    <i className="bi bi-heart-fill text-red-600"></i>
+  )}
+</button>
 
               
 
-              
-              <button  onClick={() => setSmile(!smile)}  className=" ico"> {!smile?<i class="bi bi-emoji-laughing"></i>:<i class="bi bi-emoji-laughing-fill text-blue-800"></i>}</button>
+<button
+  onClick={() => setSmile(!smile)}
+  className="ico transform transition duration-200 ease-in-out"
+  style={{ transform: smile ? 'scale(1.2)' : 'scale(1)' }}
+>
+  {!smile ? (
+    <i className="bi bi-emoji-laughing"></i>
+  ) : (
+    <i className="bi bi-emoji-laughing-fill text-blue-800"></i>
+  )}
+</button>
+
+
+
+
 
               
             </span>
