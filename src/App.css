@@ -244,3 +244,27 @@ footer{
 .heart{
   color: #ff0000;
 }
+
+/* Preloader.css */
+
+/* Preloader.css */
+
+@keyframes text-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+.loader-text {
+  animation: text-pulse 1s ease-in-out infinite;
+}
+/* Add in your CSS file */
+.preloader {
+  background-color: #ffffff;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
