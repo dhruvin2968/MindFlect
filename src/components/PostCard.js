@@ -1,7 +1,7 @@
 import { doc, deleteDoc } from "firebase/firestore";
 import { auth, db } from "../firebase/config";
 import {Comments} from "./Comments";
-import { useState } from "react";
+import {  useState } from "react";
 export const PostCard = ({post, toggle, setToggle}) => {
      const { id,title, description,author} = post;
      const isAuth = JSON.parse(localStorage.getItem("isAuth"));
@@ -11,6 +11,8 @@ export const PostCard = ({post, toggle, setToggle}) => {
       await deleteDoc(document);
       setToggle(!toggle);
     }
+  const [liked,setLiked]=useState(false);
+  const [smile,setSmile]=useState(false);
   return (
     <div className="card">
         <p className="title">{title}</p>
@@ -19,9 +21,16 @@ export const PostCard = ({post, toggle, setToggle}) => {
                
             <span className="comment">
               <button  className=" ico"><i className="bi bi-chat-dots"></i></button>
+              
+              
               { dropdown &&  <Comments  post={post} setDropdown={setDropdown} />}
-              <button  className=" ico"> <i className="bi bi-heart "></i></button>
-              <button  className="ico"><i className="bi bi-emoji-laughing"></i></button>
+              <button  onClick={() => setLiked(!liked)}  className=" ico"> {!liked?<i className="bi bi-heart "></i>:<i class="bi bi-heart-fill text-red-600"></i>}</button>
+
+              
+
+              
+              <button  onClick={() => setSmile(!smile)}  className=" ico"> {!smile?<i class="bi bi-emoji-laughing"></i>:<i class="bi bi-emoji-laughing-fill text-blue-800"></i>}</button>
+
               
             </span>
             <span className="author">{author.name}</span>

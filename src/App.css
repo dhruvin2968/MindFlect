@@ -8,18 +8,11 @@ body{
 }
 /* Header Component */
 header {
-  
-  height: 5rem;
-  padding: 10px;
+
   border-bottom: 1px solid #e1e1e0;
-  display: flex;
-  justify-content: space-between;
+ 
 }
-nav{
-  
-  border-bottom: 1px solid #e1e1e0;
-  
-}
+
 .logoname {
   display: flex;
   flex-direction: column;

@@ -56,7 +56,7 @@ export const Header = () => {
 
   return (
 
-<nav >
+<header >
   <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
   <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
       <img src={Logo} className="h-12" alt="Flowbite Logo" />
@@ -97,7 +97,7 @@ export const Header = () => {
     </Link>
     </div>
 </nav>
-</nav>
+</header>
   
   )
 }
