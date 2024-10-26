@@ -28,6 +28,8 @@ export const Home = () => {
 
   return (
     <section>
+      <div id="cursor"></div>
+      <div id="cursor-blur"></div> 
       { posts.map((post, index) => (
         post ? (
           <PostCard key={post.id} post={post} toggle={toggle} setToggle={setToggle} />
