@@ -5,15 +5,6 @@
 }
 
 
-#cursor-blur{
-  height:100px;
-  width:100px;
-  background-color: rgb(0, 242, 255);
-  border-radius: 50%;
-  position: fixed;
-  filter:blur(50px);
-  z-index:-9;
-}
 
 body{
   background-color: #ecfdfd;

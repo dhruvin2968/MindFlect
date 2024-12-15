@@ -40,15 +40,41 @@ export const Header = () => {
       confirmButtonText: 'Okay'
     })
   }
-  const url = 'https://api.freeapi.app/api/v1/public/quotes/quote/random';
-  const options = {method: 'GET', headers: {accept: 'application/json'}};
- const [quote, setQuote] = useState(" Quotes");
-  async function getQuote(){
+
+
+
+
+
+//   const url = 'https://api.freeapi.app/api/v1/public/quotes/quote/random';
+//   const options = {method: 'GET', headers: {accept: 'application/json'}};
+  const [quote, setQuote] = useState(" Quotes");
+//   async function getQuote(){
+//   try {
+//     const response = await fetch(url, options);
+//     const data = await response.json();
+//     console.log(data.data.content);
+//     setQuote(data.data.content);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+
+async function getQuote() {
+  const apiUrl = 'https://api.api-ninjas.com/v1/quotes?category=happiness';
+  const options = {
+    headers: {
+      'X-Api-Key': '3SuEcBFudlXGq4tTQiX4LA==B2YBcDgvruZ6leOr'
+    }
+  };
+
   try {
-    const response = await fetch(url, options);
-    const data = await response.json();
-    console.log(data.data.content);
-    setQuote(data.data.content);
+    const response = await fetch(apiUrl, options);
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status} ${response.statusText}`);
+    }
+    const data = await response.json(); // Parse response as JSON
+    console.log(data[0].quote); // Access the 'quote' property of the first object
+    setQuote(data[0].quote);
   } catch (error) {
     console.error(error);
   }
