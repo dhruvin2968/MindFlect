@@ -7,8 +7,7 @@ import Swal from "sweetalert2";
 
 export const Header = () => {
 
-   const [isAuth, setIsAuth] = useState(JSON.parse(localStorage.getItem("isAuth")) || false);
-  
+  const [isAuth, setIsAuth] = useState(JSON.parse(localStorage.getItem("isAuth")) || false);
   function handleLogin(){
     signInWithPopup(auth, provider).then((result) => {
       setIsAuth(true);

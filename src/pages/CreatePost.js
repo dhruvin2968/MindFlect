@@ -16,11 +16,14 @@ export const CreatePost = () => {
     setIsDisabled(true); // Disable the button immediately
 
     const document = {
+      likecount:0,
+      smilecount:0,
       title: event.target.title.value,
       description: event.target.description.value,
       author: {
         name: auth.currentUser.displayName,
         id: auth.currentUser.uid,
+       
       },
     };
 

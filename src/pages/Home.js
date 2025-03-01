@@ -20,7 +20,7 @@ export const Home = () => {
     }
      //just for checking if jyada requests toh send nhi hore console.log("---");
     getPosts();
-  },[postRef,toggle])// everytime toggle changes we reload our documents
+  },[postRef,toggle,posts])// everytime toggle changes we reload our documents
 
   // usko postRef as dependecy chaiye but it will create infinite calls
   //as objects and fns dependency mei nhi daalte
