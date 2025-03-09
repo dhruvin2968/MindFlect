@@ -3,7 +3,7 @@ import { useTitle } from "../hooks/useTitle";
 import { addDoc, collection } from "firebase/firestore";
 import { db, auth } from "../firebase/config";
 import { useState } from "react";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 export const CreatePost = () => {
   const navigate = useNavigate();
@@ -13,17 +13,17 @@ export const CreatePost = () => {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    setIsDisabled(true); // Disable the button immediately
+    setIsDisabled(true);
 
     const document = {
-      likecount:0,
-      smilecount:0,
+      likecount: 0,
+      smilecount: 0,
       title: event.target.title.value,
       description: event.target.description.value,
       author: {
         name: auth.currentUser.displayName,
         id: auth.currentUser.uid,
-        photourl:auth.currentUser.photoURL
+        photourl: auth.currentUser.photoURL,
       },
     };
 
@@ -32,7 +32,7 @@ export const CreatePost = () => {
       Swal.fire({
         title: "Post Successful!",
         icon: "success",
-        confirmButtonText: 'Cool',
+        confirmButtonText: "Cool",
       });
       navigate("/");
     } catch (error) {
@@ -41,7 +41,7 @@ export const CreatePost = () => {
         title: "Post Failed!",
         text: "Something went wrong. Please try again.",
         icon: "error",
-        confirmButtonText: 'Okay',
+        confirmButtonText: "Okay",
       });
     } finally {
       setIsDisabled(false); // Re-enable the button in case of failure or success

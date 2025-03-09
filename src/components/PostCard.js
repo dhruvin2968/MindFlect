@@ -16,9 +16,8 @@ export const PostCard = ({ post, toggle, setToggle }) => {
   }
 
   const addsmile = async () => {
-    
-    if(smile) return;
-    
+    if (smile) return;
+
     await updateDoc(document, {
       smilecount: increment(1),
     });
@@ -35,13 +34,10 @@ export const PostCard = ({ post, toggle, setToggle }) => {
 
   return (
     <div className="card">
-      {/* <p className="title">{title}</p>
-      <img src={author.photourl} alt="" />
-       */}
-        <div className="title-section">
-      <p className="title">{title}</p>
-      <img className="author-img" src={author.photourl} alt="Author" />
-    </div>
+      <div className="title-section">
+        <p className="title">{title}</p>
+        <img className="author-img" src={author.photourl} alt="Author" />
+      </div>
       <p className="description">{description}</p>
       <p className="control">
         <span className="comment">
@@ -63,7 +59,6 @@ export const PostCard = ({ post, toggle, setToggle }) => {
             )}
             <span className="pl-3">{likecount}</span>
           </button>
-          
 
           <button
             onClick={addsmile}
@@ -77,13 +72,12 @@ export const PostCard = ({ post, toggle, setToggle }) => {
             )}
             <span className="pl-3">{smilecount}</span>
           </button>
-          
         </span>
-            
+
         <span className="author">{author.name}</span>
         {isAuth &&
           auth.currentUser &&
-          ((author.id === auth.currentUser.uid) ||
+          (author.id === auth.currentUser.uid ||
             auth.currentUser.uid === "r7eGfMftf4Uo13jhJEvyPhiOQCc2") && (
             <span onClick={handleDelete} className="delete">
               <i className="bi bi-trash3"></i>
