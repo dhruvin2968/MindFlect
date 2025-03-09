@@ -188,6 +188,20 @@ header {
   margin-top: 20px;
   
 }
+.title-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Moves title left & image right */
+  gap: 10px;
+}
+.author-img {
+  width: 40px; /* Adjust size as needed */
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover; /* Ensures proper aspect ratio */
+  border: 2px solid #090909;
+  padding: 3px;
+}
 
 .createPost{
   display: flex;

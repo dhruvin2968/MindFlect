@@ -23,7 +23,7 @@ export const CreatePost = () => {
       author: {
         name: auth.currentUser.displayName,
         id: auth.currentUser.uid,
-       
+        photourl:auth.currentUser.photoURL
       },
     };
 

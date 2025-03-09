@@ -12,7 +12,6 @@ export const Header = () => {
     signInWithPopup(auth, provider).then((result) => {
       setIsAuth(true);
       localStorage.setItem("isAuth", true);
-      console.log(result);
       Swal.fire({
         title: 'Logged In Successully',
         icon: 'success',
@@ -59,10 +58,10 @@ export const Header = () => {
 // }
 
 async function getQuote() {
-  const apiUrl = 'https://api.api-ninjas.com/v1/quotes?category=happiness';
+  const apiUrl = 'https://api.api-ninjas.com/v1/quotes';
   const options = {
     headers: {
-      'X-Api-Key': '3SuEcBFudlXGq4tTQiX4LA==B2YBcDgvruZ6leOr'
+      'X-Api-Key': 'qTvJPzbFJKPJ4QiZ0yT10sKxJtRXPG36dPlq4cDr'
     }
   };
 
@@ -72,7 +71,7 @@ async function getQuote() {
       throw new Error(`Error: ${response.status} ${response.statusText}`);
     }
     const data = await response.json(); // Parse response as JSON
-    console.log(data[0].quote); // Access the 'quote' property of the first object
+   
     setQuote(data[0].quote);
   } catch (error) {
     console.error(error);
