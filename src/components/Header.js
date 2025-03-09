@@ -38,33 +38,14 @@ export const Header = () => {
       confirmButtonText: 'Okay'
     })
   }
-
-
-
-
-
-//   const url = 'https://api.freeapi.app/api/v1/public/quotes/quote/random';
-//   const options = {method: 'GET', headers: {accept: 'application/json'}};
   const [quote, setQuote] = useState(" Quotes");
-//   async function getQuote(){
-//   try {
-//     const response = await fetch(url, options);
-//     const data = await response.json();
-//     console.log(data.data.content);
-//     setQuote(data.data.content);
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
-
 async function getQuote() {
   const apiUrl = 'https://api.api-ninjas.com/v1/quotes';
   const options = {
     headers: {
-      'X-Api-Key': 'qTvJPzbFJKPJ4QiZ0yT10sKxJtRXPG36dPlq4cDr'
+      'X-Api-Key': process.env.REACT_APP_QUOTE_API_KEY
     }
   };
-
   try {
     const response = await fetch(apiUrl, options);
     if (!response.ok) {

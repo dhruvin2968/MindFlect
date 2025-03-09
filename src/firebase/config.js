@@ -3,7 +3,7 @@ import {getFirestore} from "firebase/firestore";
 import {getAuth, GoogleAuthProvider} from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey:"AIzaSyBr7lbJ3PxpjA-KPjJcBqyqfGJfMVoCSQg",
+  apiKey:process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain:"mindflect-44666.firebaseapp.com",
   projectId:"mindflect-44666",
   storageBucket:"mindflect-44666.appspot.com",
