@@ -40,7 +40,7 @@ export const Header = () => {
       confirmButtonText: "Okay",
     });
   }
-  const [quote, setQuote] = useState(" Quotes");
+  const [quote, setQuote] = useState(" Click here");
   async function getQuote() {
     const apiUrl = "https://api.api-ninjas.com/v1/quotes";
     const options = {
